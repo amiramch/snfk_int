@@ -1,7 +1,8 @@
-name: streamlit_environment
+name: sf_env
 channels:
   - snowflake
 dependencies:
-  - python=3.8
   - streamlit=1.26.0
   - requests
+  
+  
