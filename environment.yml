@@ -1,0 +1,7 @@
+name: streamlit_environment
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - streamlit=1.26.0
+  - requests
