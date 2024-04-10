@@ -10,16 +10,10 @@ messages = st.container()
 if prompt := st.chat_input("Ask something"):
     messages.chat_message("user").write(prompt)
 
-    # answer_query = f"""
-    # SELECT SNOWFLAKE.CORTEX.EXTRACT_ANSWER(description,
-    #     '{prompt}') as response, description
-    # FROM episodes_final
-    # """
-
     prompt_query = f"""
     SELECT SNOWFLAKE.CORTEX.COMPLETE(
         'llama2-70b-chat',
-            CONCAT('{prompt}', name)
+            CONCAT('{prompt}', description)
     ) as response, id, name, description FROM episodes_final LIMIT 10
     """
 
